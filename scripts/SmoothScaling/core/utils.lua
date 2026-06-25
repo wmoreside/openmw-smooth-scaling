@@ -12,24 +12,22 @@ M.showDebugMessage = function(skillId, multipliers)
     if not multipliers then return end
     if not settings.getEnableMessages() then return end
 
-    local fmt = "%s" ..
-        "\nglobal: %.2f" ..
-        "\nclass: %.2f" ..
-        "\nspecialization: %.2f" ..
-        "\nindividual: %.2f" ..
-        "\nmagicka: %.2f" ..
-        "\ntotal: %.2f"
+    local order = {
+        { label = "global",         value = multipliers.global },
+        { label = "class",          value = multipliers.class },
+        { label = "specialization", value = multipliers.specialization },
+        { label = "individual",     value = multipliers.individual },
+        { label = "magicka",        value = multipliers.magicka },
+        { label = "total",          value = multipliers.total },
+    }
 
-    local msg = string.format(
-        fmt,
-        skillId,
-        round(multipliers.global),
-        round(multipliers.class),
-        round(multipliers.specialization),
-        round(multipliers.individual),
-        round(multipliers.magicka),
-        round(multipliers.total)
-    )
+    local msg = skillId
+    for _, entry in ipairs(order) do
+        local rounded = round(entry.value)
+        if rounded ~= 1 or entry.label == "total" then
+            msg = msg .. string.format("\n%s: %.2f", entry.label, rounded)
+        end
+    end
 
     ui.showMessage(msg)
 end
