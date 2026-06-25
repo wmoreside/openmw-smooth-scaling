@@ -7,6 +7,7 @@ local globalSettings = storage.playerSection("SettingsPlayerSmoothScalingGlobal"
 local classSkillSettings = storage.playerSection("SettingsPlayerSmoothScalingClassSkills")
 local specializationSettings = storage.playerSection("SettingsPlayerSmoothScalingSpecialization")
 local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingIndividual")
+local magickaSettings = storage.playerSection("SettingsPlayerSmoothScalingMagicka")
 local debugSettings = storage.playerSection("SettingsPlayerSmoothScalingDebug")
 
 M.getGlobalFrom = function()
@@ -35,6 +36,14 @@ end
 
 M.getIndividualMultiplier = function(skillId)
     return individualSettings:get(skillId) or 100
+end
+
+M.getMagickaEnabled = function()
+    return magickaSettings:get("magickaEnabled")
+end
+
+M.getXpPerMagicka = function()
+    return magickaSettings:get("xpPerMagicka")
 end
 
 M.getEnableMessages = function()

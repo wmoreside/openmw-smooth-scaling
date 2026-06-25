@@ -17,6 +17,7 @@ M.showDebugMessage = function(skillId, multipliers)
         "\nclass: %.2f" ..
         "\nspecialization: %.2f" ..
         "\nindividual: %.2f" ..
+        "\nmagicka: %.2f" ..
         "\ntotal: %.2f"
 
     local msg = string.format(
@@ -26,6 +27,7 @@ M.showDebugMessage = function(skillId, multipliers)
         round(multipliers.class),
         round(multipliers.specialization),
         round(multipliers.individual),
+        round(multipliers.magicka),
         round(multipliers.total)
     )
 

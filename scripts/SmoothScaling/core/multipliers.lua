@@ -1,5 +1,6 @@
 local omwself = require("openmw.self")
 local types = require("openmw.types")
+local I = require("openmw.interfaces")
 local classSkills = require("scripts.SmoothScaling.core.classSkills")
 local curve = require("scripts.SmoothScaling.core.curve")
 local settings = require("scripts.SmoothScaling.core.settings")
@@ -7,6 +8,15 @@ local utils = require("scripts.SmoothScaling.core.utils")
 
 
 local M = {}
+
+local MAGICKA_SKILLS = {
+    alteration = true,
+    conjuration = true,
+    destruction = true,
+    illusion = true,
+    mysticism = true,
+    restoration = true,
+}
 
 local function getGlobalMultiplier(skillId)
     local skillLevel = types.NPC.stats.skills[skillId](omwself).base
@@ -31,6 +41,17 @@ local function getIndividualMultiplier(skillId)
     return settings.getIndividualMultiplier(skillId) / 100
 end
 
+local function getMagickaMultiplier(skillId, options)
+    if not settings.getMagickaEnabled() then return 1 end
+    if not MAGICKA_SKILLS[skillId] then return 1 end
+    if options.useType ~= I.SkillProgression.SKILL_USE_TYPES.Spellcast_Success then return 1 end
+
+    local spell = types.Actor.getSelectedSpell(omwself)
+    if not spell or not spell.cost then return 1 end
+
+    return settings.getXpPerMagicka() * spell.cost
+end
+
 M.apply = function(skillId, options)
     if options.skillGain == nil then return end
 
@@ -38,8 +59,9 @@ M.apply = function(skillId, options)
     local class = getClassMultiplier(skillId)
     local specialization = getSpecializationMultiplier(skillId)
     local individual = getIndividualMultiplier(skillId)
+    local magicka = getMagickaMultiplier(skillId, options)
 
-    local multiplier = global * class * specialization * individual
+    local multiplier = global * class * specialization * individual * magicka
 
     options.skillGain = options.skillGain * multiplier
 
@@ -48,6 +70,7 @@ M.apply = function(skillId, options)
         class = class,
         specialization = specialization,
         individual = individual,
+        magicka = magicka,
         total = multiplier,
     })
 end

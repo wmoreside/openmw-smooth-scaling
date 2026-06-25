@@ -160,13 +160,41 @@ I.Settings.registerGroup {
 }
 
 I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingMagicka",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "magicka_group_name",
+    description = "magicka_group_description",
+    permanentStorage = true,
+    order = 4,
+    settings = {
+        {
+            key = "magickaEnabled",
+            renderer = "checkbox",
+            name = "magickaEnabled_name",
+            default = false,
+        },
+        {
+            key = "xpPerMagicka",
+            renderer = "number",
+            name = "xpPerMagicka_name",
+            default = 0.1,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+    },
+}
+
+I.Settings.registerGroup {
     key = "SettingsPlayerSmoothScalingDebug",
     page = "SmoothScaling",
     l10n = "SmoothScaling",
     name = "debug_group_name",
     description = "debug_group_description",
     permanentStorage = true,
-    order = 4,
+    order = 5,
     settings = {
         {
             key = "enableMessages",

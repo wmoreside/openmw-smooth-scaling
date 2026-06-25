@@ -52,6 +52,12 @@ shortblade_name: "Short Blade"
 sneak_name: "Sneak"
 speechcraft_name: "Speechcraft"
 
+magicka_group_name: "Magicka Scaling"
+magicka_group_description: "Enable to scale magicka skill growth by spell cost."
+
+magickaEnabled_name: "Enabled"
+xpPerMagicka_name: "XP Per Magicka"
+
 debug_group_name: "Debug"
 debug_group_description: "Options for debugging/development."
 
