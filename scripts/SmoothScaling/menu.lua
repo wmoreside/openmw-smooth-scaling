@@ -188,13 +188,89 @@ I.Settings.registerGroup {
 }
 
 I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingArmorScaling",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "armorScaling_group_name",
+    description = "armorScaling_group_description",
+    permanentStorage = true,
+    order = 5,
+    settings = {
+        {
+            key = "armorScalingEnabled",
+            renderer = "checkbox",
+            name = "armorScalingEnabled_name",
+            default = false,
+        },
+        {
+            key = "armorScalingFrom",
+            renderer = "number",
+            name = "armorScalingFrom_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+        {
+            key = "armorScalingTo",
+            renderer = "number",
+            name = "armorScalingTo_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+    },
+}
+
+I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingBlockScaling",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "blockScaling_group_name",
+    description = "blockScaling_group_description",
+    permanentStorage = true,
+    order = 6,
+    settings = {
+        {
+            key = "blockScalingEnabled",
+            renderer = "checkbox",
+            name = "blockScalingEnabled_name",
+            default = false,
+        },
+        {
+            key = "blockScalingFrom",
+            renderer = "number",
+            name = "blockScalingFrom_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+        {
+            key = "blockScalingTo",
+            renderer = "number",
+            name = "blockScalingTo_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+    },
+}
+
+I.Settings.registerGroup {
     key = "SettingsPlayerSmoothScalingDebug",
     page = "SmoothScaling",
     l10n = "SmoothScaling",
     name = "debug_group_name",
     description = "debug_group_description",
     permanentStorage = true,
-    order = 5,
+    order = 7,
     settings = {
         {
             key = "enableMessages",

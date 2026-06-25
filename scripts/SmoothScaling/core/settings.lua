@@ -8,6 +8,8 @@ local classSkillSettings = storage.playerSection("SettingsPlayerSmoothScalingCla
 local specializationSettings = storage.playerSection("SettingsPlayerSmoothScalingSpecialization")
 local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingIndividual")
 local magickaSettings = storage.playerSection("SettingsPlayerSmoothScalingMagicka")
+local armorScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingArmorScaling")
+local blockScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingBlockScaling")
 local debugSettings = storage.playerSection("SettingsPlayerSmoothScalingDebug")
 
 M.getGlobalFrom = function()
@@ -44,6 +46,30 @@ end
 
 M.getXpPerMagicka = function()
     return magickaSettings:get("xpPerMagicka")
+end
+
+M.getArmorScalingEnabled = function()
+    return armorScalingSettings:get("armorScalingEnabled")
+end
+
+M.getArmorScalingFrom = function()
+    return armorScalingSettings:get("armorScalingFrom")
+end
+
+M.getArmorScalingTo = function()
+    return armorScalingSettings:get("armorScalingTo")
+end
+
+M.getBlockScalingEnabled = function()
+    return blockScalingSettings:get("blockScalingEnabled")
+end
+
+M.getBlockScalingFrom = function()
+    return blockScalingSettings:get("blockScalingFrom")
+end
+
+M.getBlockScalingTo = function()
+    return blockScalingSettings:get("blockScalingTo")
 end
 
 M.getEnableMessages = function()

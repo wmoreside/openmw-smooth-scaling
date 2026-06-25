@@ -58,6 +58,20 @@ magicka_group_description: "Enable to scale magicka skill growth by spell cost."
 magickaEnabled_name: "Enabled"
 xpPerMagicka_name: "XP Per Magicka"
 
+armorScaling_group_name: "Armor Scaling"
+armorScaling_group_description: "Enable to scale Heavy Armor, Medium Armor, Light Armor, and Unarmored skill growth by how hard the incoming attack hit. The first value is the multiplier when an attack does no damage; the second is the multiplier when an attack would deal enough damage to kill you (based on your base health). Damage in between is interpolated and is adjusted for difficulty."
+
+armorScalingEnabled_name: "Enabled"
+armorScalingFrom_name: "Multiplier at 0 Damage"
+armorScalingTo_name: "Multiplier at Lethal Damage"
+
+blockScaling_group_name: "Block Scaling"
+blockScaling_group_description: "Enable to scale Block skill growth by how hard the blocked attack would have hit. The first value is the multiplier when an attack would do no damage; the second is the multiplier when an attack would deal enough damage to kill you (based on your base health). Damage in between is interpolated and is adjusted for difficulty."
+
+blockScalingEnabled_name: "Enabled"
+blockScalingFrom_name: "Multiplier at 0 Damage"
+blockScalingTo_name: "Multiplier at Lethal Damage"
+
 debug_group_name: "Debug"
 debug_group_description: "Options for debugging/development."
 
