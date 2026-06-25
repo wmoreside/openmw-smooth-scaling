@@ -7,6 +7,7 @@ local globalSettings = storage.playerSection("SettingsPlayerSmoothScalingGlobal"
 local classSkillSettings = storage.playerSection("SettingsPlayerSmoothScalingClassSkills")
 local specializationSettings = storage.playerSection("SettingsPlayerSmoothScalingSpecialization")
 local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingIndividual")
+local debugSettings = storage.playerSection("SettingsPlayerSmoothScalingDebug")
 
 M.getGlobalFrom = function()
     return globalSettings:get("globalFrom")
@@ -34,6 +35,10 @@ end
 
 M.getIndividualMultiplier = function(skillId)
     return individualSettings:get(skillId) or 100
+end
+
+M.getEnableMessages = function()
+    return debugSettings:get("enableMessages")
 end
 
 return M

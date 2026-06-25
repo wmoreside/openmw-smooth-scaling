@@ -3,6 +3,7 @@ local types = require("openmw.types")
 local classSkills = require("scripts.SmoothScaling.core.classSkills")
 local curve = require("scripts.SmoothScaling.core.curve")
 local settings = require("scripts.SmoothScaling.core.settings")
+local utils = require("scripts.SmoothScaling.core.utils")
 
 
 local M = {}
@@ -33,13 +34,22 @@ end
 M.apply = function(skillId, options)
     if options.skillGain == nil then return end
 
-    local multiplier =
-        getGlobalMultiplier(skillId)
-        * getClassMultiplier(skillId)
-        * getSpecializationMultiplier(skillId)
-        * getIndividualMultiplier(skillId)
+    local global = getGlobalMultiplier(skillId)
+    local class = getClassMultiplier(skillId)
+    local specialization = getSpecializationMultiplier(skillId)
+    local individual = getIndividualMultiplier(skillId)
+
+    local multiplier = global * class * specialization * individual
 
     options.skillGain = options.skillGain * multiplier
+
+    utils.showDebugMessage(skillId, {
+        global = global,
+        class = class,
+        specialization = specialization,
+        individual = individual,
+        total = multiplier,
+    })
 end
 
 return M

@@ -158,3 +158,21 @@ I.Settings.registerGroup {
         individualSetting("speechcraft"),
     },
 }
+
+I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingDebug",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "debug_group_name",
+    description = "debug_group_description",
+    permanentStorage = true,
+    order = 4,
+    settings = {
+        {
+            key = "enableMessages",
+            renderer = "checkbox",
+            name = "enableMessages_name",
+            default = false,
+        },
+    },
+}

@@ -51,3 +51,8 @@ security_name: "Security"
 shortblade_name: "Short Blade"
 sneak_name: "Sneak"
 speechcraft_name: "Speechcraft"
+
+debug_group_name: "Debug"
+debug_group_description: "Options for debugging/development."
+
+enableMessages_name: "Enable Messages"
