@@ -101,13 +101,13 @@ local function applyDifficulty(damage, attacker)
     return damage
 end
 
-M.getIncomingDamage = function()
+M.getIncoming = function()
     local damage = incomingDamage
     incomingDamage = nil
     return damage
 end
 
-M.saveIncomingDamage = function(attack)
+M.saveIncoming = function(attack)
     incomingDamage = nil
 
     if not settings.getArmorScalingEnabled() then return end

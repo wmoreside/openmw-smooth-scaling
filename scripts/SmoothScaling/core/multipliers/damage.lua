@@ -1,6 +1,6 @@
 local omwself = require("openmw.self")
 local types = require("openmw.types")
-local combat = require("scripts.SmoothScaling.core.combat")
+local damage = require("scripts.SmoothScaling.core.damage")
 local settings = require("scripts.SmoothScaling.core.settings")
 local curve = require("scripts.SmoothScaling.core.utils.curve")
 
@@ -29,18 +29,18 @@ M.get = function(skillId)
     if isArmor and not settings.getArmorScalingEnabled() then return 1 end
     if isBlock and not settings.getBlockScalingEnabled() then return 1 end
 
-    local damage = combat.getIncomingDamage()
-    if not damage then return 1 end
+    local incomingDamage = damage.getIncoming()
+    if not incomingDamage then return 1 end
 
     if isBlock then
         return damageMultiplier(
-            damage,
+            incomingDamage,
             settings.getBlockScalingFrom(),
             settings.getBlockScalingTo())
     end
 
     return damageMultiplier(
-        damage,
+        incomingDamage,
         settings.getArmorScalingFrom(),
         settings.getArmorScalingTo())
 end

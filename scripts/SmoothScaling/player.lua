@@ -1,7 +1,7 @@
 local I = require("openmw.interfaces")
-local combat = require("scripts.SmoothScaling.core.combat")
+local damage = require("scripts.SmoothScaling.core.damage")
 local scaling = require("scripts.SmoothScaling.core.scaling")
 
 
-I.Combat.addOnHitHandler(combat.saveIncomingDamage)
+I.Combat.addOnHitHandler(damage.saveIncoming)
 I.SkillProgression.addSkillUsedHandler(scaling.apply)
