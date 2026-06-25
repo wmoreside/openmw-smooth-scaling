@@ -2,6 +2,7 @@ local omwself = require("openmw.self")
 local types = require("openmw.types")
 local combat = require("scripts.SmoothScaling.core.combat")
 local settings = require("scripts.SmoothScaling.core.settings")
+local curve = require("scripts.SmoothScaling.core.utils.curve")
 
 
 local M = {}
@@ -17,7 +18,7 @@ local function damageMultiplier(damage, from, to)
     local baseHealth = types.Actor.stats.dynamic.health(omwself).base
     if not baseHealth or baseHealth <= 0 then return 1 end
     local t = math.max(0, math.min(1, damage / baseHealth))
-    return (from + (to - from) * t) / 100
+    return curve.interpolate(from, to, t * 100) / 100
 end
 
 M.get = function(skillId)
