@@ -8,7 +8,7 @@ local function round(n)
     return math.floor(n * 100 + 0.5) / 100
 end
 
-M.showDebugMessage = function(skillId, multipliers)
+M.show = function(skillId, multipliers)
     if not multipliers then return end
     if not settings.getEnableMessages() then return end
 

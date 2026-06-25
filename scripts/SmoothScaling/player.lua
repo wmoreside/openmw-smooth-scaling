@@ -1,5 +1,5 @@
 local I = require("openmw.interfaces")
-local multipliers = require("scripts.SmoothScaling.core.multipliers")
+local scaling = require("scripts.SmoothScaling.core.scaling")
 
 
-I.SkillProgression.addSkillUsedHandler(multipliers.apply)
+I.SkillProgression.addSkillUsedHandler(scaling.apply)
