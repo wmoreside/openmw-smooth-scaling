@@ -1,0 +1,53 @@
+page_name: "Smooth Scaling"
+page_description: "Configure multipliers for how quickly your skills grow. All values are percentages, where 100 means normal speed, 50 is half speed, and 200 is double speed. All values are multiplicative."
+
+global_group_name: "Global Leveling Speed"
+global_group_description: "A multiplier applied to every skill, scaled by that skill's current level along a gentle curve that starts gradual and steepens as the skill nears 100. A skill at level 0 uses the first value, a skill at level 100 uses the second value, and levels in between are interpolated."
+
+globalFrom_name: "Multiplier at Skill Level 0"
+globalTo_name: "Multiplier at Skill Level 100"
+
+classSkills_group_name: "Class Skill Leveling Speed"
+classSkills_group_description: "Multipliers applied based on whether a skill is one of your class's major, minor, or misc skills."
+
+majorMultiplier_name: "Major Skills"
+minorMultiplier_name: "Minor Skills"
+miscMultiplier_name: "Misc Skills"
+
+specialization_group_name: "Specialized Skill Leveling Speed"
+specialization_group_description: "A multiplier applied to skills that fall within your class's specialization (Combat, Magic, or Stealth)."
+
+specializationMultiplier_name: "Specialized Skills"
+
+individual_group_name: "Individual Skill Leveling Speed"
+individual_group_description: "A multiplier applied to a specific skill on top of all the other multipliers."
+
+armorer_name: "Armorer"
+athletics_name: "Athletics"
+axe_name: "Axe"
+block_name: "Block"
+bluntweapon_name: "Blunt Weapon"
+heavyarmor_name: "Heavy Armor"
+longblade_name: "Long Blade"
+mediumarmor_name: "Medium Armor"
+spear_name: "Spear"
+
+alchemy_name: "Alchemy"
+alteration_name: "Alteration"
+conjuration_name: "Conjuration"
+destruction_name: "Destruction"
+enchant_name: "Enchant"
+illusion_name: "Illusion"
+mysticism_name: "Mysticism"
+restoration_name: "Restoration"
+unarmored_name: "Unarmored"
+
+acrobatics_name: "Acrobatics"
+handtohand_name: "Hand-to-hand"
+lightarmor_name: "Light Armor"
+marksman_name: "Marksman"
+mercantile_name: "Mercantile"
+security_name: "Security"
+shortblade_name: "Short Blade"
+sneak_name: "Sneak"
+speechcraft_name: "Speechcraft"
