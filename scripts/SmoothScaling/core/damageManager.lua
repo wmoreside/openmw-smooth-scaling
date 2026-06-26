@@ -41,7 +41,7 @@ end
 
 local function calculateWeaponDamage(attacker, attack)
     local weapon = attack.weapon
-    local record = types.Weapon.record(attack.weapon)
+    local record = types.Weapon.record(weapon)
 
     -- Weapon damage
     local range = weaponDamageRanges[attack.type]
@@ -82,6 +82,7 @@ local function calculateBlockedDamage(attack)
         return calculateCreatureDamage(attacker, attack)
     end
 
+    -- Hand to hand damage falls through here, but doesn't grant XP in vanilla anyways.
     return 0
 end
 
