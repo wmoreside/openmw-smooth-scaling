@@ -32,17 +32,10 @@ M.get = function(skillId)
     local damage = damageManager.getIncoming()
     if not damage then return 1 end
 
-    if isBlock then
-        return damageMultiplier(
-            damage,
-            settings.getBlockScalingFrom(),
-            settings.getBlockScalingTo())
-    end
+    local from = isBlock and settings.getBlockScalingFrom() or settings.getArmorScalingFrom()
+    local to = isBlock and settings.getBlockScalingTo() or settings.getArmorScalingTo()
 
-    return damageMultiplier(
-        damage,
-        settings.getArmorScalingFrom(),
-        settings.getArmorScalingTo())
+    return damageMultiplier(damage, from, to)
 end
 
 return M
