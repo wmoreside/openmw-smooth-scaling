@@ -4,13 +4,13 @@ local hitChanceManager = require("scripts.SmoothScaling.core.hitChanceManager")
 local scalingManager   = require("scripts.SmoothScaling.core.scalingManager")
 
 
-I.Combat.addOnHitHandler(damageManager.saveIncoming)
+I.Combat.addOnHitHandler(damageManager.saveLastHit)
 I.SkillProgression.addSkillUsedHandler(scalingManager.apply)
 
 return {
     eventHandlers = {
         SmoothScalingPlayerHitActor = function(data)
-            hitChanceManager.saveIncoming(data.attack, data.target)
+            hitChanceManager.saveLastHit(data.attack, data.target)
         end
     }
 }

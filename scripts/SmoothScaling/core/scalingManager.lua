@@ -3,7 +3,7 @@ local globalMultiplier         = require("scripts.SmoothScaling.core.multipliers
 local classMultiplier          = require("scripts.SmoothScaling.core.multipliers.class")
 local specializationMultiplier = require("scripts.SmoothScaling.core.multipliers.specialization")
 local individualMultiplier     = require("scripts.SmoothScaling.core.multipliers.individual")
-local magickaMultiplier        = require("scripts.SmoothScaling.core.multipliers.magicka")
+local spellCostMultiplier      = require("scripts.SmoothScaling.core.multipliers.spellCost")
 local damageMultiplier         = require("scripts.SmoothScaling.core.multipliers.damage")
 local hitChanceMultiplier      = require("scripts.SmoothScaling.core.multipliers.hitChance")
 
@@ -17,11 +17,11 @@ M.apply = function(skillId, options)
     local class = classMultiplier.get(skillId)
     local specialization = specializationMultiplier.get(skillId)
     local individual = individualMultiplier.get(skillId)
-    local magicka = magickaMultiplier.get(skillId, options)
+    local spellCost = spellCostMultiplier.get(skillId, options)
     local damage = damageMultiplier.get(skillId)
     local hitChance = hitChanceMultiplier.get(skillId)
 
-    local multiplier = global * class * specialization * individual * magicka * damage * hitChance
+    local multiplier = global * class * specialization * individual * spellCost * damage * hitChance
 
     options.skillGain = options.skillGain * multiplier
 
@@ -30,7 +30,7 @@ M.apply = function(skillId, options)
         class = class,
         specialization = specialization,
         individual = individual,
-        magicka = magicka,
+        spellCost = spellCost,
         damage = damage,
         hitChance = hitChance,
         total = multiplier,

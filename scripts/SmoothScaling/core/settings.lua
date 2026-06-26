@@ -7,7 +7,7 @@ local globalSettings = storage.playerSection("SettingsPlayerSmoothScalingGlobal"
 local classSkillSettings = storage.playerSection("SettingsPlayerSmoothScalingClassSkills")
 local specializationSettings = storage.playerSection("SettingsPlayerSmoothScalingSpecialization")
 local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingIndividual")
-local magickaSettings = storage.playerSection("SettingsPlayerSmoothScalingMagicka")
+local spellCastSettings = storage.playerSection("SettingsPlayerSmoothScalingSpellCost")
 local armorScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingArmorScaling")
 local blockScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingBlockScaling")
 local weaponScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingWeaponScaling")
@@ -41,12 +41,12 @@ M.getIndividualMultiplier = function(skillId)
     return individualSettings:get(skillId) or 100
 end
 
-M.getMagickaEnabled = function()
-    return magickaSettings:get("magickaEnabled")
+M.getSpellCostEnabled = function()
+    return spellCastSettings:get("spellCostEnabled")
 end
 
 M.getXpPerMagicka = function()
-    return magickaSettings:get("xpPerMagicka")
+    return spellCastSettings:get("xpPerMagicka")
 end
 
 M.getArmorScalingEnabled = function()

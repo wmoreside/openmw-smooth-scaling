@@ -29,7 +29,7 @@ M.get = function(skillId)
     if isArmor and not settings.getArmorScalingEnabled() then return 1 end
     if isBlock and not settings.getBlockScalingEnabled() then return 1 end
 
-    local damage = damageManager.getIncoming()
+    local damage = damageManager.getLastHit()
     if not damage then return 1 end
 
     local from = isBlock and settings.getBlockScalingFrom() or settings.getArmorScalingFrom()

@@ -15,7 +15,7 @@ minorMultiplier_name: "Minor Skills"
 miscMultiplier_name: "Misc Skills"
 
 specialization_group_name: "Specialized Skill Leveling Speed"
-specialization_group_description: "A multiplier applied to skills that fall within your class's specialization (Combat, Magic, or Stealth)."
+specialization_group_description: "A multiplier applied to skills that fall within your class's specialization."
 
 specializationMultiplier_name: "Specialized Skills"
 
@@ -52,28 +52,28 @@ shortblade_name: "Short Blade"
 sneak_name: "Sneak"
 speechcraft_name: "Speechcraft"
 
-magicka_group_name: "Magicka Scaling"
-magicka_group_description: "Enable to scale magicka skill growth by spell cost."
+spellCost_group_name: "Magicka Scaling (Spell Cost)"
+spellCost_group_description: "Enable to scale magicka skill growth by spell cost."
 
-magickaEnabled_name: "Enabled"
+spellCostEnabled_name: "Enabled"
 xpPerMagicka_name: "XP Per Magicka"
 
-armorScaling_group_name: "Armor Scaling"
-armorScaling_group_description: "Enable to scale Heavy Armor, Medium Armor, Light Armor, and Unarmored skill growth by how hard the incoming attack hit. The first value is the multiplier when an attack does no damage; the second is the multiplier when an attack would deal enough damage to kill you (based on your base health). Damage in between is interpolated and is adjusted for difficulty."
+armorScaling_group_name: "Armor Scaling (Damage Received)"
+armorScaling_group_description: "Enable to scale armor skill growth by how much damage you received."
 
 armorScalingEnabled_name: "Enabled"
 armorScalingFrom_name: "Multiplier at 0 Damage"
 armorScalingTo_name: "Multiplier at Lethal Damage"
 
-blockScaling_group_name: "Block Scaling"
-blockScaling_group_description: "Enable to scale Block skill growth by how hard the blocked attack would have hit. The first value is the multiplier when an attack would do no damage; the second is the multiplier when an attack would deal enough damage to kill you (based on your base health). Damage in between is interpolated and is adjusted for difficulty."
+blockScaling_group_name: "Block Scaling (Damage Blocked)"
+blockScaling_group_description: "Enable to scale block skill growth by how much damage you blocked."
 
 blockScalingEnabled_name: "Enabled"
 blockScalingFrom_name: "Multiplier at 0 Damage"
 blockScalingTo_name: "Multiplier at Lethal Damage"
 
-weaponScaling_group_name: "Weapon Scaling"
-weaponScaling_group_description: "Enable to scale weapon and hand-to-hand skill growth by how difficult the previous hit was to land. The first value is the multiplier when the chance to hit was 100%; the second is the multiplier when the chance to hit was 0%. Chances in between are interpolated along the same curve used by Global and Damage scaling. Because the chance is measured after each hit and applied to the next, the very first strike against any enemy is always unscaled."
+weaponScaling_group_name: "Weapon Scaling (Hit Chance)"
+weaponScaling_group_description: "Enable to scale weapon and hand-to-hand skill growth by your chance to hit."
 
 weaponScalingEnabled_name: "Enabled"
 weaponScalingFrom_name: "Multiplier at 100% Hit Chance"

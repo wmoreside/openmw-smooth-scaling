@@ -7,7 +7,7 @@ local settings = require("scripts.SmoothScaling.core.settings")
 
 local M = {}
 
-local incomingHitChance = nil
+local lastHitChance = nil
 
 local fFatigueBase = core.getGMST("fFatigueBase")
 local fFatigueMult = core.getGMST("fFatigueMult")
@@ -36,7 +36,7 @@ local function attackSkill(attack)
     return "handtohand"
 end
 
-local function fatigueTerm(actor)
+local function fatiguePart(actor)
     local fatigue = types.Actor.stats.dynamic.fatigue(actor)
     local max = fatigue.base + (fatigue.modifier or 0)
     local normalised = 1
@@ -48,27 +48,27 @@ local function fatigueTerm(actor)
     return fFatigueBase - fFatigueMult * (1 - normalised)
 end
 
-local function attackRating(attacker, skillId)
+local function hitRatePart(attacker, skillId)
     local skill = types.NPC.stats.skills[skillId](attacker).modified
     local agility = types.Actor.stats.attributes.agility(attacker).modified
     local luck = types.Actor.stats.attributes.luck(attacker).modified
-    return (skill + 0.2 * agility + 0.1 * luck) * fatigueTerm(attacker)
+    return (skill + 0.2 * agility + 0.1 * luck) * fatiguePart(attacker)
 end
 
-local function evasionRating(defender)
+local function evasionPart(defender)
     local agility = types.Actor.stats.attributes.agility(defender).modified
     local luck = types.Actor.stats.attributes.luck(defender).modified
-    return (0.2 * agility + 0.1 * luck) * fatigueTerm(defender)
+    return (0.2 * agility + 0.1 * luck) * fatiguePart(defender)
 end
 
-M.getIncoming = function()
-    local hitChance = incomingHitChance
-    incomingHitChance = nil
+M.getLastHit = function()
+    local hitChance = lastHitChance
+    lastHitChance = nil
     return hitChance
 end
 
-M.saveIncoming = function(attack, target)
-    incomingHitChance = nil
+M.saveLastHit = function(attack, target)
+    lastHitChance = nil
 
     if not settings.getWeaponScalingEnabled() then return end
     if not attack or not attack.successful then return end
@@ -78,7 +78,7 @@ M.saveIncoming = function(attack, target)
     local skillId = attackSkill(attack)
     if not skillId then return end
 
-    incomingHitChance = attackRating(omwself, skillId) - evasionRating(target)
+    lastHitChance = hitRatePart(omwself, skillId) - evasionPart(target)
 end
 
 return M

@@ -6,7 +6,7 @@ local settings = require("scripts.SmoothScaling.core.settings")
 
 local M = {}
 
-local MAGICKA_SKILLS = {
+local magickaSkills = {
     alteration = true,
     conjuration = true,
     destruction = true,
@@ -16,8 +16,8 @@ local MAGICKA_SKILLS = {
 }
 
 M.get = function(skillId, options)
-    if not settings.getMagickaEnabled() then return 1 end
-    if not MAGICKA_SKILLS[skillId] then return 1 end
+    if not settings.getSpellCostEnabled() then return 1 end
+    if not magickaSkills[skillId] then return 1 end
     if options.useType ~= I.SkillProgression.SKILL_USE_TYPES.Spellcast_Success then return 1 end
 
     local spell = types.Actor.getSelectedSpell(omwself)

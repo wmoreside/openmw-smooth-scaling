@@ -160,18 +160,18 @@ I.Settings.registerGroup {
 }
 
 I.Settings.registerGroup {
-    key = "SettingsPlayerSmoothScalingMagicka",
+    key = "SettingsPlayerSmoothScalingSpellCost",
     page = "SmoothScaling",
     l10n = "SmoothScaling",
-    name = "magicka_group_name",
-    description = "magicka_group_description",
+    name = "spellCost_group_name",
+    description = "spellCost_group_description",
     permanentStorage = true,
     order = 4,
     settings = {
         {
-            key = "magickaEnabled",
+            key = "spellCostEnabled",
             renderer = "checkbox",
-            name = "magickaEnabled_name",
+            name = "spellCostEnabled_name",
             default = false,
         },
         {

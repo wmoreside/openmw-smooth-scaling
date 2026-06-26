@@ -7,7 +7,7 @@ local settings = require("scripts.SmoothScaling.core.settings")
 
 local M = {}
 
-local incomingDamage = nil
+local lastHitDamage = nil
 
 local fDamageStrengthBase = core.getGMST("fDamageStrengthBase")
 local fDamageStrengthMult = core.getGMST("fDamageStrengthMult")
@@ -103,14 +103,14 @@ local function applyDifficulty(damage, attacker)
     return damage
 end
 
-M.getIncoming = function()
-    local damage = incomingDamage
-    incomingDamage = nil
+M.getLastHit = function()
+    local damage = lastHitDamage
+    lastHitDamage = nil
     return damage
 end
 
-M.saveIncoming = function(attack)
-    incomingDamage = nil
+M.saveLastHit = function(attack)
+    lastHitDamage = nil
 
     if not attack or not attack.successful then return end
 
@@ -121,7 +121,7 @@ M.saveIncoming = function(attack)
         rawDamage = attack.damage and attack.damage.health or 0
     end
 
-    incomingDamage = applyDifficulty(rawDamage, attack.attacker)
+    lastHitDamage = applyDifficulty(rawDamage, attack.attacker)
 end
 
 return M

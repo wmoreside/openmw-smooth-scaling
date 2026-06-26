@@ -24,7 +24,7 @@ M.get = function(skillId)
     if not weaponSkills[skillId] then return 1 end
     if not settings.getWeaponScalingEnabled() then return 1 end
 
-    local hitChance = hitChanceManager.getIncoming()
+    local hitChance = hitChanceManager.getLastHit()
     if not hitChance then return 1 end
 
     return hitChanceMultiplier(
