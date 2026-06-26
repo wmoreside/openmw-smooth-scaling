@@ -14,10 +14,10 @@ local armorSkills = {
     unarmored = true,
 }
 
-local function damageMultiplier(damage, from, to)
+local function damageMultiplier(dmg, from, to)
     local baseHealth = types.Actor.stats.dynamic.health(omwself).base
     if not baseHealth or baseHealth <= 0 then return 1 end
-    local t = math.max(0, math.min(1, damage / baseHealth))
+    local t = math.max(0, math.min(1, dmg / baseHealth))
     return curve.interpolate(from, to, t * 100) / 100
 end
 
