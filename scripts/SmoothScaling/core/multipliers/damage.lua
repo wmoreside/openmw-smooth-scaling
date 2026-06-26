@@ -1,8 +1,8 @@
-local omwself = require("openmw.self")
-local types = require("openmw.types")
+local omwself       = require("openmw.self")
+local types         = require("openmw.types")
 local damageManager = require("scripts.SmoothScaling.core.damageManager")
-local settings = require("scripts.SmoothScaling.core.settings")
-local curve = require("scripts.SmoothScaling.core.utils.curve")
+local settings      = require("scripts.SmoothScaling.core.settings")
+local curve         = require("scripts.SmoothScaling.core.utils.curve")
 
 
 local M = {}

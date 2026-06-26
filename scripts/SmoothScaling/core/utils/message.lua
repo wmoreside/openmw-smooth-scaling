@@ -1,4 +1,4 @@
-local ui = require("openmw.ui")
+local ui       = require("openmw.ui")
 local settings = require("scripts.SmoothScaling.core.settings")
 
 

@@ -1,6 +1,6 @@
 local hitChanceManager = require("scripts.SmoothScaling.core.hitChanceManager")
-local settings = require("scripts.SmoothScaling.core.settings")
-local curve = require("scripts.SmoothScaling.core.utils.curve")
+local settings         = require("scripts.SmoothScaling.core.settings")
+local curve            = require("scripts.SmoothScaling.core.utils.curve")
 
 
 local M = {}

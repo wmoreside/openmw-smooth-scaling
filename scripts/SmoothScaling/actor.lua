@@ -1,6 +1,6 @@
-local I = require("openmw.interfaces")
+local I       = require("openmw.interfaces")
 local omwself = require("openmw.self")
-local types = require("openmw.types")
+local types   = require("openmw.types")
 
 
 I.Combat.addOnHitHandler(function(attack)

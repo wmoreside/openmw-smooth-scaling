@@ -1,6 +1,6 @@
-local core = require("openmw.core")
+local core    = require("openmw.core")
 local omwself = require("openmw.self")
-local types = require("openmw.types")
+local types   = require("openmw.types")
 
 
 local M = {}

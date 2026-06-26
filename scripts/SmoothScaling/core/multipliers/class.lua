@@ -1,4 +1,4 @@
-local settings = require("scripts.SmoothScaling.core.settings")
+local settings    = require("scripts.SmoothScaling.core.settings")
 local classSkills = require("scripts.SmoothScaling.core.utils.classSkills")
 
 

@@ -1,7 +1,7 @@
-local I = require("openmw.interfaces")
-local damageManager = require("scripts.SmoothScaling.core.damageManager")
+local I                = require("openmw.interfaces")
+local damageManager    = require("scripts.SmoothScaling.core.damageManager")
 local hitChanceManager = require("scripts.SmoothScaling.core.hitChanceManager")
-local scalingManager = require("scripts.SmoothScaling.core.scalingManager")
+local scalingManager   = require("scripts.SmoothScaling.core.scalingManager")
 
 
 I.Combat.addOnHitHandler(damageManager.saveIncoming)

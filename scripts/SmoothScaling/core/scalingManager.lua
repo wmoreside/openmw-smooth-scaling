@@ -1,11 +1,11 @@
-local message = require("scripts.SmoothScaling.core.utils.message")
-local globalMultiplier = require("scripts.SmoothScaling.core.multipliers.global")
-local classMultiplier = require("scripts.SmoothScaling.core.multipliers.class")
+local message                  = require("scripts.SmoothScaling.core.utils.message")
+local globalMultiplier         = require("scripts.SmoothScaling.core.multipliers.global")
+local classMultiplier          = require("scripts.SmoothScaling.core.multipliers.class")
 local specializationMultiplier = require("scripts.SmoothScaling.core.multipliers.specialization")
-local individualMultiplier = require("scripts.SmoothScaling.core.multipliers.individual")
-local magickaMultiplier = require("scripts.SmoothScaling.core.multipliers.magicka")
-local damageMultiplier = require("scripts.SmoothScaling.core.multipliers.damage")
-local hitChanceMultiplier = require("scripts.SmoothScaling.core.multipliers.hitChance")
+local individualMultiplier     = require("scripts.SmoothScaling.core.multipliers.individual")
+local magickaMultiplier        = require("scripts.SmoothScaling.core.multipliers.magicka")
+local damageMultiplier         = require("scripts.SmoothScaling.core.multipliers.damage")
+local hitChanceMultiplier      = require("scripts.SmoothScaling.core.multipliers.hitChance")
 
 
 local M = {}
