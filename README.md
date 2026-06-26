@@ -17,6 +17,8 @@ This mod gives you options for scaling skill growth by various parameters. By de
 - Block (Damage Blocked) - Enable to scale block skill growth by how much damage you blocked.
 - Weapon Skills (Hit Chance) - Enable to scale weapon and hand-to-hand skill growth by your chance to hit.
 
+All values are multiplicative.
+
 ## Requirements
 
 OpenMW 0.50 or later.
