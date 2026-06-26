@@ -45,6 +45,8 @@ local function calculateWeaponDamage(attacker, attack)
 
     -- Weapon damage
     local range = weaponDamageRanges[attack.type]
+    if not range then return 0 end
+
     local min = record[range.min]
     local max = record[range.max]
     local damage = min + (max - min) * attack.strength
