@@ -264,13 +264,51 @@ I.Settings.registerGroup {
 }
 
 I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingWeaponScaling",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "weaponScaling_group_name",
+    description = "weaponScaling_group_description",
+    permanentStorage = true,
+    order = 7,
+    settings = {
+        {
+            key = "weaponScalingEnabled",
+            renderer = "checkbox",
+            name = "weaponScalingEnabled_name",
+            default = false,
+        },
+        {
+            key = "weaponScalingFrom",
+            renderer = "number",
+            name = "weaponScalingFrom_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+        {
+            key = "weaponScalingTo",
+            renderer = "number",
+            name = "weaponScalingTo_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+    },
+}
+
+I.Settings.registerGroup {
     key = "SettingsPlayerSmoothScalingDebug",
     page = "SmoothScaling",
     l10n = "SmoothScaling",
     name = "debug_group_name",
     description = "debug_group_description",
     permanentStorage = true,
-    order = 7,
+    order = 8,
     settings = {
         {
             key = "enableMessages",

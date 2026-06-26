@@ -10,6 +10,7 @@ local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingInd
 local magickaSettings = storage.playerSection("SettingsPlayerSmoothScalingMagicka")
 local armorScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingArmorScaling")
 local blockScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingBlockScaling")
+local weaponScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingWeaponScaling")
 local debugSettings = storage.playerSection("SettingsPlayerSmoothScalingDebug")
 
 M.getGlobalFrom = function()
@@ -70,6 +71,18 @@ end
 
 M.getBlockScalingTo = function()
     return blockScalingSettings:get("blockScalingTo")
+end
+
+M.getWeaponScalingEnabled = function()
+    return weaponScalingSettings:get("weaponScalingEnabled")
+end
+
+M.getWeaponScalingFrom = function()
+    return weaponScalingSettings:get("weaponScalingFrom")
+end
+
+M.getWeaponScalingTo = function()
+    return weaponScalingSettings:get("weaponScalingTo")
 end
 
 M.getEnableMessages = function()

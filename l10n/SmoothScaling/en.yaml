@@ -72,6 +72,13 @@ blockScalingEnabled_name: "Enabled"
 blockScalingFrom_name: "Multiplier at 0 Damage"
 blockScalingTo_name: "Multiplier at Lethal Damage"
 
+weaponScaling_group_name: "Weapon Scaling"
+weaponScaling_group_description: "Enable to scale weapon and hand-to-hand skill growth by how difficult the previous hit was to land. The first value is the multiplier when the chance to hit was 100%; the second is the multiplier when the chance to hit was 0%. Chances in between are interpolated along the same curve used by Global and Damage scaling. Because the chance is measured after each hit and applied to the next, the very first strike against any enemy is always unscaled."
+
+weaponScalingEnabled_name: "Enabled"
+weaponScalingFrom_name: "Multiplier at 100% Hit Chance"
+weaponScalingTo_name: "Multiplier at 0% Hit Chance"
+
 debug_group_name: "Debug"
 debug_group_description: "Options for debugging/development."
 

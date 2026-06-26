@@ -19,6 +19,7 @@ M.show = function(skillId, multipliers)
         { label = "individual",     value = multipliers.individual },
         { label = "magicka",        value = multipliers.magicka },
         { label = "damage",         value = multipliers.damage },
+        { label = "hitChance",      value = multipliers.hitChance },
         { label = "total",          value = multipliers.total },
     }
 
