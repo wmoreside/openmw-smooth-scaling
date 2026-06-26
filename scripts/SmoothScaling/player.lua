@@ -1,16 +1,16 @@
 local I = require("openmw.interfaces")
-local damage = require("scripts.SmoothScaling.core.damage")
-local hitChance = require("scripts.SmoothScaling.core.hitChance")
-local scaling = require("scripts.SmoothScaling.core.scaling")
+local damageManager = require("scripts.SmoothScaling.core.damageManager")
+local hitChanceManager = require("scripts.SmoothScaling.core.hitChanceManager")
+local scalingManager = require("scripts.SmoothScaling.core.scalingManager")
 
 
-I.Combat.addOnHitHandler(damage.saveIncoming)
-I.SkillProgression.addSkillUsedHandler(scaling.apply)
+I.Combat.addOnHitHandler(damageManager.saveIncoming)
+I.SkillProgression.addSkillUsedHandler(scalingManager.apply)
 
 return {
     eventHandlers = {
         SmoothScalingPlayerHitActor = function(data)
-            hitChance.saveIncoming(data.attack, data.target)
+            hitChanceManager.saveIncoming(data.attack, data.target)
         end
     }
 }

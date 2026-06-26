@@ -1,4 +1,4 @@
-local hitChance = require("scripts.SmoothScaling.core.hitChance")
+local hitChanceManager = require("scripts.SmoothScaling.core.hitChanceManager")
 local settings = require("scripts.SmoothScaling.core.settings")
 local curve = require("scripts.SmoothScaling.core.utils.curve")
 
@@ -24,11 +24,11 @@ M.get = function(skillId)
     if not weaponSkills[skillId] then return 1 end
     if not settings.getWeaponScalingEnabled() then return 1 end
 
-    local incomingHitChance = hitChance.getIncoming()
-    if not incomingHitChance then return 1 end
+    local hitChance = hitChanceManager.getIncoming()
+    if not hitChance then return 1 end
 
     return hitChanceMultiplier(
-        incomingHitChance,
+        hitChance,
         settings.getWeaponScalingFrom(),
         settings.getWeaponScalingTo())
 end
