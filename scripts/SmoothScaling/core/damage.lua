@@ -110,8 +110,6 @@ end
 M.saveIncoming = function(attack)
     incomingDamage = nil
 
-    if not settings.getArmorScalingEnabled() then return end
-    if not settings.getBlockScalingEnabled() then return end
     if not attack or not attack.successful then return end
 
     local rawDamage = 0
