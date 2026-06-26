@@ -1,25 +1,25 @@
 page_name: "Smooth Scaling"
 page_description: "Configure multipliers for how quickly your skills grow. All values are percentages, where 100 means normal speed, 50 is half speed, and 200 is double speed. All values are multiplicative."
 
-global_group_name: "Global Leveling Speed"
+global_group_name: "Global"
 global_group_description: "A multiplier applied to every skill, scaled by that skill's current level along a gentle curve that starts gradual and steepens as the skill nears 100. A skill at level 0 uses the first value, a skill at level 100 uses the second value, and levels in between are interpolated."
 
 globalFrom_name: "Multiplier at Skill Level 0"
 globalTo_name: "Multiplier at Skill Level 100"
 
-classSkills_group_name: "Class Skill Leveling Speed"
+classSkills_group_name: "Class Skills"
 classSkills_group_description: "Multipliers applied based on whether a skill is one of your class's major, minor, or misc skills."
 
 majorMultiplier_name: "Major Skills"
 minorMultiplier_name: "Minor Skills"
 miscMultiplier_name: "Misc Skills"
 
-specialization_group_name: "Specialized Skill Leveling Speed"
+specialization_group_name: "Specialization"
 specialization_group_description: "A multiplier applied to skills that fall within your class's specialization."
 
 specializationMultiplier_name: "Specialized Skills"
 
-individual_group_name: "Individual Skill Leveling Speed"
+individual_group_name: "Individual Skills"
 individual_group_description: "A multiplier applied to a specific skill on top of all the other multipliers."
 
 armorer_name: "Armorer"
@@ -52,27 +52,27 @@ shortblade_name: "Short Blade"
 sneak_name: "Sneak"
 speechcraft_name: "Speechcraft"
 
-spellCost_group_name: "Magicka Scaling (Spell Cost)"
+spellCost_group_name: "Magicka Skills (Spell Cost)"
 spellCost_group_description: "Enable to scale magicka skill growth by spell cost."
 
 spellCostEnabled_name: "Enabled"
 xpPerMagicka_name: "XP Per Magicka"
 
-armorScaling_group_name: "Armor Scaling (Damage Received)"
+armorScaling_group_name: "Armor Skills (Damage Received)"
 armorScaling_group_description: "Enable to scale armor skill growth by how much damage you received."
 
 armorScalingEnabled_name: "Enabled"
 armorScalingFrom_name: "Multiplier at 0 Damage"
 armorScalingTo_name: "Multiplier at Lethal Damage"
 
-blockScaling_group_name: "Block Scaling (Damage Blocked)"
+blockScaling_group_name: "Block (Damage Blocked)"
 blockScaling_group_description: "Enable to scale block skill growth by how much damage you blocked."
 
 blockScalingEnabled_name: "Enabled"
 blockScalingFrom_name: "Multiplier at 0 Damage"
 blockScalingTo_name: "Multiplier at Lethal Damage"
 
-weaponScaling_group_name: "Weapon Scaling (Hit Chance)"
+weaponScaling_group_name: "Weapon Skills (Hit Chance)"
 weaponScaling_group_description: "Enable to scale weapon and hand-to-hand skill growth by your chance to hit."
 
 weaponScalingEnabled_name: "Enabled"
