@@ -9,6 +9,9 @@ local M = {}
 
 local incomingHitChance = nil
 
+local fFatigueBase = core.getGMST("fFatigueBase")
+local fFatigueMult = core.getGMST("fFatigueMult")
+
 local weaponTypeSkills = {
     [types.Weapon.TYPE.ShortBladeOneHand] = "shortblade",
     [types.Weapon.TYPE.LongBladeOneHand] = "longblade",
@@ -37,12 +40,12 @@ local function fatigueTerm(actor)
     local fatigue = types.Actor.stats.dynamic.fatigue(actor)
     local max = fatigue.base + (fatigue.modifier or 0)
     local normalised = 1
+
     if max > 0 then
         normalised = math.max(0, fatigue.current / max)
     end
-    local base = core.getGMST("fFatigueBase")
-    local mult = core.getGMST("fFatigueMult")
-    return base - mult * (1 - normalised)
+
+    return fFatigueBase - fFatigueMult * (1 - normalised)
 end
 
 local function attackRating(attacker, skillId)

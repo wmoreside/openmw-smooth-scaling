@@ -9,6 +9,9 @@ local M = {}
 
 local incomingDamage = nil
 
+local fDamageStrengthBase = core.getGMST("fDamageStrengthBase")
+local fDamageStrengthMult = core.getGMST("fDamageStrengthMult")
+
 local creatureDamageRanges = {
     [I.Combat.ATTACK_TYPES.Chop] = { min = 1, max = 2 },
     [I.Combat.ATTACK_TYPES.Slash] = { min = 3, max = 4 },
@@ -48,9 +51,7 @@ local function calculateWeaponDamage(attacker, attack)
 
     -- Strength modifier
     local str = types.Actor.stats.attributes.strength(attacker).modified
-    local base = core.getGMST("fDamageStrengthBase")
-    local mult = core.getGMST("fDamageStrengthMult")
-    damage = damage * (base + str * mult * 0.1)
+    damage = damage * (fDamageStrengthBase + str * fDamageStrengthMult * 0.1)
 
     -- Condition modifier
     local itemData = types.Item.itemData(weapon)
