@@ -15,9 +15,10 @@ minorMultiplier_name: "Minor Skills"
 miscMultiplier_name: "Misc Skills"
 
 specialization_group_name: "Specialization"
-specialization_group_description: "A multiplier applied to skills that fall within your class's specialization."
+specialization_group_description: "Multipliers applied based on whether or not a skill falls within your class's specialization."
 
 specializationMultiplier_name: "Specialized Skills"
+nonSpecializationMultiplier_name: "Unspecialized Skills"
 
 individual_group_name: "Individual Skills"
 individual_group_description: "A multiplier applied to a specific skill on top of all the other multipliers."

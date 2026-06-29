@@ -101,6 +101,16 @@ I.Settings.registerGroup {
                 min = 0,
             },
         },
+        {
+            key = "nonSpecializationMultiplier",
+            renderer = "number",
+            name = "nonSpecializationMultiplier_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
     },
 }
 

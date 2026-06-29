@@ -10,7 +10,7 @@ This mod gives you options for scaling skill growth by various parameters. By de
 
 - Global - A multiplier applied to every skill, scaled by that skill's current level along a gentle curve that starts gradual and steepens as the skill nears 100.
 - Class Skills - Multipliers applied based on whether a skill is one of your class's major, minor, or misc skills.
-- Specialization - A multiplier applied to skills that fall within your class's specialization.
+- Specialization - Multipliers applied based on whether or not a skill falls within your class's specialization.
 - Individual Skills - A multiplier applied to a specific skill on top of all the other multipliers.
 - Magicka Skills (Spell Cost) - Enable to scale magicka skill growth by spell cost.
 - Armor Skills (Damage Received) - Enable to scale armor skill growth by how much damage you received.

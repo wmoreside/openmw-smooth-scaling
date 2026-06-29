@@ -37,6 +37,10 @@ M.getSpecializationMultiplier = function()
     return specializationSettings:get("specializationMultiplier") or 100
 end
 
+M.getNonSpecializationMultiplier = function()
+    return specializationSettings:get("nonSpecializationMultiplier") or 100
+end
+
 M.getIndividualMultiplier = function(skillId)
     return individualSettings:get(skillId) or 100
 end
