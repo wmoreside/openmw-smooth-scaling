@@ -13,6 +13,7 @@ This mod gives you options for scaling skill growth by various parameters. By de
 - Specialization - Multipliers applied based on whether or not a skill falls within your class's specialization.
 - Individual Skills - A multiplier applied to a specific skill on top of all the other multipliers.
 - Magicka Skills (Spell Cost) - Enable to scale magicka skill growth by spell cost.
+- Magicka Skills (Cast Chance) - Enable to scale magicka skill growth by your chance to cast the spell.
 - Armor Skills (Damage Received) - Enable to scale armor skill growth by how much damage you received.
 - Block (Damage Blocked) - Enable to scale block skill growth by how much damage you blocked.
 - Weapon Skills (Hit Chance) - Enable to scale weapon and hand-to-hand skill growth by your chance to hit.

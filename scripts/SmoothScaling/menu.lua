@@ -198,13 +198,51 @@ I.Settings.registerGroup {
 }
 
 I.Settings.registerGroup {
+    key = "SettingsPlayerSmoothScalingCastChance",
+    page = "SmoothScaling",
+    l10n = "SmoothScaling",
+    name = "castChance_group_name",
+    description = "castChance_group_description",
+    permanentStorage = true,
+    order = 5,
+    settings = {
+        {
+            key = "castChanceEnabled",
+            renderer = "checkbox",
+            name = "castChanceEnabled_name",
+            default = false,
+        },
+        {
+            key = "castChanceFrom",
+            renderer = "number",
+            name = "castChanceFrom_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+        {
+            key = "castChanceTo",
+            renderer = "number",
+            name = "castChanceTo_name",
+            default = 100,
+            argument = {
+                integer = false,
+                min = 0,
+            },
+        },
+    },
+}
+
+I.Settings.registerGroup {
     key = "SettingsPlayerSmoothScalingArmorScaling",
     page = "SmoothScaling",
     l10n = "SmoothScaling",
     name = "armorScaling_group_name",
     description = "armorScaling_group_description",
     permanentStorage = true,
-    order = 5,
+    order = 6,
     settings = {
         {
             key = "armorScalingEnabled",
@@ -242,7 +280,7 @@ I.Settings.registerGroup {
     name = "blockScaling_group_name",
     description = "blockScaling_group_description",
     permanentStorage = true,
-    order = 6,
+    order = 7,
     settings = {
         {
             key = "blockScalingEnabled",
@@ -280,7 +318,7 @@ I.Settings.registerGroup {
     name = "weaponScaling_group_name",
     description = "weaponScaling_group_description",
     permanentStorage = true,
-    order = 7,
+    order = 8,
     settings = {
         {
             key = "weaponScalingEnabled",
@@ -318,7 +356,7 @@ I.Settings.registerGroup {
     name = "debug_group_name",
     description = "debug_group_description",
     permanentStorage = true,
-    order = 8,
+    order = 9,
     settings = {
         {
             key = "enableMessages",

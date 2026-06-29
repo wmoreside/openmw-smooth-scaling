@@ -8,6 +8,7 @@ local classSkillSettings = storage.playerSection("SettingsPlayerSmoothScalingCla
 local specializationSettings = storage.playerSection("SettingsPlayerSmoothScalingSpecialization")
 local individualSettings = storage.playerSection("SettingsPlayerSmoothScalingIndividual")
 local spellCastSettings = storage.playerSection("SettingsPlayerSmoothScalingSpellCost")
+local castChanceSettings = storage.playerSection("SettingsPlayerSmoothScalingCastChance")
 local armorScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingArmorScaling")
 local blockScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingBlockScaling")
 local weaponScalingSettings = storage.playerSection("SettingsPlayerSmoothScalingWeaponScaling")
@@ -51,6 +52,18 @@ end
 
 M.getXpPerMagicka = function()
     return spellCastSettings:get("xpPerMagicka") or 0.1
+end
+
+M.getCastChanceEnabled = function()
+    return castChanceSettings:get("castChanceEnabled") or false
+end
+
+M.getCastChanceFrom = function()
+    return castChanceSettings:get("castChanceFrom") or 100
+end
+
+M.getCastChanceTo = function()
+    return castChanceSettings:get("castChanceTo") or 100
 end
 
 M.getArmorScalingEnabled = function()

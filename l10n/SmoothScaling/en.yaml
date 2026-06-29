@@ -59,6 +59,13 @@ spellCost_group_description: "Enable to scale magicka skill growth by spell cost
 spellCostEnabled_name: "Enabled"
 xpPerMagicka_name: "XP Per Magicka"
 
+castChance_group_name: "Magicka Skills (Cast Chance)"
+castChance_group_description: "Enable to scale magicka skill growth by your chance to cast the spell."
+
+castChanceEnabled_name: "Enabled"
+castChanceFrom_name: "Multiplier at 100% Cast Chance"
+castChanceTo_name: "Multiplier at 0% Cast Chance"
+
 armorScaling_group_name: "Armor Skills (Damage Received)"
 armorScaling_group_description: "Enable to scale armor skill growth by how much damage you received."
 

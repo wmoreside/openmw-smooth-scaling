@@ -18,6 +18,7 @@ M.show = function(skillId, multipliers)
         { label = "specialization", value = multipliers.specialization },
         { label = "individual",     value = multipliers.individual },
         { label = "spellCost",      value = multipliers.spellCost },
+        { label = "castChance",     value = multipliers.castChance },
         { label = "damage",         value = multipliers.damage },
         { label = "hitChance",      value = multipliers.hitChance },
         { label = "total",          value = multipliers.total },
